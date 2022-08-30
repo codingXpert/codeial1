@@ -41,5 +41,4 @@ Here we can add one desktop profile and secondly the cover photo in out profile 
 This app is deployed on the heroku portal so that we can use it. But being a free host we cann't store images on to the heroku cloud services. Whenever user logout it's images will be deleted by the heroku server. We cann't upload images through mobile in Heroku portal so while using this app make sure that we are using the laptop or PC to upload any image.
 
 
-[Heroku link]([http://localhost:3800/user/signin](https://befriends-keshav.herokuapp.com/))
-
+[Heroku link]:- https://beefriend.herokuapp.com/user/signup
