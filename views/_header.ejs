@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="/CSS/header.css">
+    
+<header class="border space se-flex" id="head_part">
+
+    <h1 class="headlink col-sm-4 col-6"><a href="/" class="link ">BeFriends</a></h1>
+
+
+    <div class="search se-flex">
+        <i class="fas fa-microphone d-block bar_icons blue"></i>
+        <input type="text" name="text" class="" id="text" placeholder="Search Here ... ">
+        <i class="fas fa-search d-block bar_icons blue"></i>
+    </div>
+
+    <button type="button" class=" btn btn-success"><a href="/profile/<%= user._id %>" class="link text_white bold">profile <i class="fas fa-user-circle"></i></a></button>
+
+    <button type="button" class="profile  btn btn-danger "><a href="/user/signout" class="link text_white bold">signout</a></button>
+
+    <button type="button" class="head_logout btn btn-gradient  menu"><a href="/user/signout" class="link text_white bold">Signout</a></button>
+
+
+
+    
+</header>

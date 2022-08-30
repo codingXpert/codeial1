@@ -1,0 +1,139 @@
+<link rel="stylesheet" href="/CSS/home.css">
+
+<!-- <section id="buttons" class="margin70 se-flex">
+    <button class="btn btn-color btn-gradient round bold"><a href="/" class="link">All user <i class="fas fa-user"></i></a></button>
+
+    <button class="btn btn-gradient round bold"><a href="/" class="link">All friends <i class="fas fa-users"></i></a></button>
+</section> -->
+
+<main class="se-flex-start my-5 ">
+
+
+    
+
+    <section id="posts" class="">
+
+        <h1 class="my-5 text-center">All Posts <i class="fas fa-blog"></i></h1>
+
+        <form action="/user/create-post" class=" spaceXL" enctype="multipart/form-data" id="post_form" method="post">
+
+            <div class="se-flex">
+                <textarea name="content" cols="30" rows="3" class=" round" placeholder="Write your post Here..."></textarea>
+            </div>
+            
+            <div class="se-flex my-3">
+                <input type="file" class="file_upload " name="avatar">
+            </div>
+            
+
+
+            <div class="se-flex">
+                <button type="submit" class="bold btn-sm round circle btn-gradient mt-2"><i class="fas fa-plus fa-2x"></i></button>
+            </div>
+            <!-- <input type="submit" class="bold btn-sm round btn-color" value="post"> -->
+            
+        </form>
+
+
+        <ul class="my-4 all_post">
+            <% for(let each_post of allPosts) { %>
+
+
+                <li class="my-4">
+
+
+                    <div class="space each_post post_border">
+
+                        <div class="post_header  sb-flex">
+                            <div class="user_info  se-flex ">
+                                <% if( each_post.user.avatar) { %> 
+                                    <img class="img_icon" src="<%= each_post.user.avatar %>" alt="user_DP">
+                                <% }else{ %>
+                                    <img class="img_icon" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="user_DP">
+                                <% } %>
+
+                                <p class="bold"><%= each_post.user.name %></p>
+                            </div>
+
+                            <div class=" se-flex follow_delete">
+
+                                <button class=" round bold btn-gradient">follow</button>
+                            <a href="/user/delete-post/<%= each_post._id %>" class="link"><i class="fas fa-minus-circle fa-2x delete"></i></a>
+
+
+                            </div>
+                            
+                            <!-- <button class=" round bold btn-info">follow</button> -->
+                            <!-- <a href="/user/delete-post/<%= each_post._id %>" class="link"><i class="fas fa-minus-circle fa-2x delete"></i></a> -->
+
+                        </div>
+
+                        <div class="post_body my-1">
+                            <div class="post_img_div my-2"><img src="<%= each_post.avatar %>" alt="user's image" class="post_body_image"></div>
+                            <div><p><%= each_post.user.email %> : <%= each_post.content %></p></div>
+                            
+                            
+                        </div>
+
+                        <div class="post_footer my-1 d-flex">
+                            <div class="likes bold half text_center"><a href="/user/likes/<%= each_post._id %>" class="link text_white"><%= each_post.likes.length %> &nbsp;<i class="far fa-thumbs-up"></i> Likes</a> </div>
+                            <div class="comments bold half text_center"><a href="/user/comment/<%= each_post._id %>" class="link text_white">comments</a> (<%= each_post.comments.length %>) </div>
+                        </div>
+
+                        
+                    </div>
+
+                    <!-- <img src="<%= each_post.avatar %>"> -->
+                    
+                   
+
+                    
+                </li>
+            <% } %>
+        </ul>
+
+
+    </section>
+
+    <section id="user_and_friends" class="" >
+        <h1 class="text_center my-5">All Users <i class="fas fa-users"></i></h1>
+
+        <div class="all_user" id="all_user">
+
+            <% for(let eachUser of users) { %>
+                
+                <div class="each_user se-flex my-4 ">
+                    <div class="each_user_info se-flex ">
+
+                        <div >
+
+                            <a href="/profile/<%= eachUser._id %>" class="d-block">
+                                <% if( eachUser.avatar) { %> 
+                                    <img class="img_iconMD" src="\uploads\users\avatars/avatar-1653232835974" alt="user_DP">
+                                <% }else{ %>
+                                    <img class="img_iconMD" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="user_DP">
+                                <% } %>
+                            </a>
+                            
+                        </div>
+                        
+                        
+        
+                        <a href="/profile/<%= eachUser._id %>" class="d-block link white"><p class="bold white d-block"><%= eachUser.name %></p></a>
+
+                        <!-- <p class="bold border1"><%= eachUser.name %></p> -->
+                    </div>
+                    <button type="button" class="btn bold btn-gradient">follow</button>
+                </div>
+                
+            <% } %>
+            
+        </div>
+        
+    </section>
+</main>
+
+
+
+
+

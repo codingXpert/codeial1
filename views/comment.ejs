@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="/CSS/comment.css">
+
+<div class="post margin70 box_center">
+    <div class="space each_post post_border">
+
+        <div class="post_header  sb-flex">
+            <div class="user_info  se-flex ">
+                <% if( post.user.avatar) { %> 
+                    <img class="img_icon" src="<%= post.user.avatar %>" alt="user_DP">
+                <% }else{ %>
+                    <img class="img_icon" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="user_DP">
+                <% } %>
+
+                <p class="bold"><%= post.user.name %></p>
+            </div>
+
+            <div class=" se-flex follow_delete">
+
+                <button class=" round bold btn-gradient">follow</button>
+            <a href="/user/delete-post/<%= post._id %>" class="link"><i class="fas fa-minus-circle fa-2x delete"></i></a>
+
+
+            </div>
+            
+            
+        </div>
+
+        <div class="post_body my-1">
+            <div class="post_img_div my-2"><img src="<%= post.avatar %>" alt="user's image" class="post_body_image"></div>
+            <div><p><%= post.user.email %> : <%= post.content %></p></div>
+            
+            
+        </div>
+
+        <div class="post_footer text_center my-5 ">
+
+            
+
+            <% if(post.comments.length > 0) { %>
+
+                <h2> All comments</h2>
+
+                <% for(let each_comment of post.comments) { %>
+
+
+                    <div class="se-flex width70 box_center my-5 bottomBorder">
+                        <div class="se-flex width30">
+
+                            <% if( each_comment.user.avatar) { %> 
+                                <img src="<%= each_comment.user.avatar %>" class="img_icon" alt="">
+                            <% }else{ %>
+                                <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" class="img_icon" alt="">
+                                <!-- <img class="img_icon" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="user_DP"> -->
+                            <% } %>
+
+                            
+                            <p><%= each_comment.user.name %></p>
+                        </div>
+                        <p class=" width40"> <%= each_comment.content %></p>
+                        <a href="/user/delete-comment/<%= each_comment._id %>" class="link"><i class="fas fa-minus-circle fa-2x delete"></i></a>
+                    </div>
+
+                    
+                <% } %>
+            <% }else{ %>
+
+                <h2 class="text_center">No comments to show add a new one</h2>
+            <% } %>
+
+            <form action="/user/create-comment" class="my-5" method="post">
+
+                <input type="hidden" name="post" value="<%= post._id %>">
+
+                <p><input type="text" name="content" class="edge space" id="comment" placeholder=" comment Here..."></p>
+                <button type="submit" class="bold btn-sm round circle btn-gradient mt-2"><i class="fas fa-plus fa-2x"></i></button>
+            </form>
+        </div>
+
+        
+    </div>
+
+</div>

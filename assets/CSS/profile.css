@@ -1,0 +1,157 @@
+.d-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.se-flex {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center; }
+
+.sb-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+textarea:focus, input:focus {
+  outline: none; }
+
+.d-block {
+  display: block; }
+
+.full {
+  width: 100%; }
+
+.half {
+  width: 50%; }
+
+.box_center {
+  margin: auto; }
+
+.text_center {
+  text-align: center; }
+
+.space {
+  padding: 5px; }
+
+.spaceXL {
+  padding: 10px; }
+
+.bold {
+  font-weight: 700; }
+
+.size {
+  font-size: 24px; }
+
+.size2 {
+  font-size: 20px; }
+
+.size3 {
+  font-size: 16px; }
+
+.link {
+  color: black;
+  text-decoration: none; }
+
+.border1 {
+  border: 2px solid white !important; }
+
+.text_white {
+  color: white; }
+
+.round {
+  border-radius: 7px; }
+
+.btn-color {
+  background-color: #00d0ff; }
+
+.btn:hover {
+  background-color: orange; }
+
+.circle {
+  border-radius: 50%; }
+
+.delete {
+  color: red; }
+
+.img_icon {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%; }
+
+.post_border {
+  border: 5px solid rgba(255, 34, 0, 0.918);
+  border-radius: 7px; }
+
+.file_upload {
+  width: 100px; }
+
+.margin70 {
+  margin-top: 70px; }
+
+.width70 {
+  width: 70%; }
+
+#background_dp {
+  margin-top: 54px;
+  height: 400px; }
+  #background_dp img {
+    height: 100%;
+    width: 100%; }
+
+#dp {
+  height: 200px;
+  width: 200px;
+  margin: -100px auto 0px; }
+  #dp img {
+    height: 100%;
+    width: 100%; }
+
+.each_post {
+  background-color: #000000e0; }
+  .each_post .user_info, .each_post .follow_delete {
+    width: 40%; }
+  .each_post .post_body {
+    display: flex;
+    flex-wrap: wrap; }
+    .each_post .post_body .post_img_div {
+      height: 300px;
+      width: 100%; }
+    .each_post .post_body .post_body_image {
+      height: 100%;
+      width: 100%; }
+
+body {
+  color: white; }
+  body #post_form .file_upload {
+    width: 100px; }
+  body .all_post {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0; }
+    body .all_post li {
+      width: 90%; }
+
+@media screen and (min-width: 500px) {
+  .user_info, .follow_delete {
+    width: 30% !important; }
+  .each_post {
+    margin: auto; }
+    .each_post .post_body {
+      display: flex;
+      flex-wrap: wrap; }
+      .each_post .post_body .post_img_div {
+        height: 300px;
+        width: 100%; }
+      .each_post .post_body .post_body_image {
+        height: 100%;
+        width: 100%; } }
+
+@media screen and (min-width: 700px) {
+  .user_info, .follow_delete {
+    width: 50%; }
+  .all_post li {
+    width: 45% !important; } }

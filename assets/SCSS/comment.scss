@@ -1,0 +1,100 @@
+
+
+
+
+body{color: white;}
+
+.each_post{
+    background-color: #000000e0;
+    // width: 40%;
+    // border: 2px solid yellow;
+    // margin: auto;
+    // height: 400px;
+    .user_info, .follow_delete{
+        width: 40%;
+    }
+
+    
+    .post_body{
+        // height: 300px;
+        
+        display: flex;
+        flex-wrap: wrap;
+
+        .post_img_div{height: 300px;width: 100%;}
+
+        .post_body_image{height: 100%;width: 100%;}
+    }
+
+    .post_footer{
+        // background-color: black;
+    }
+}
+
+
+#post_form{
+    .file_upload{
+        width: 100px;
+    }
+}
+
+.all_post{
+    // background-color: #00d0ff;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+
+    li{
+        width: 90%;
+    }
+}
+
+
+
+
+
+
+
+@media screen and (min-width:500px) {
+
+    .post{width: 80% !important;}
+
+
+    .user_info, .follow_delete{
+        width: 30% !important;
+    }
+
+    .each_post{
+        background-color: #000000e0;
+        // width: 90%;
+        margin: auto;
+        // height: 500px;
+    
+        .post_body{
+            // height: 400px;
+            display: flex;
+            flex-wrap: wrap;
+
+            .post_img_div{height: 300px;width: 100%;}
+    
+            .post_body_image{height: 100%;width: 100%;}
+        }
+    
+    }
+}
+
+@media screen and (min-width:900px) {
+    .post{width: 70% !important;}
+    .user_info, .follow_delete{
+        width: 50%;
+    }
+    .all_post li{
+        width: 45% !important;
+    }
+
+    
+}
+
